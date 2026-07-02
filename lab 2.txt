@@ -8,40 +8,62 @@ git branch -a
 git rebase master
 
 
+# Step 1: Clone the repository
 git clone https://github.com/LikithKumar0112/Mod1P1-Demo.git
 
+# Step 2: Go to the repository
 cd Mod1P1-Demo
 
+# Step 3: Check current branch
 git branch
 
+# Step 4: Rename branch to master (only if current branch is main)
 git branch -m main master
 
-git checkout -b feature
+# Step 5: View local branches
+git branch
 
-# Edit index.html
+# Step 6: View local and remote branches
+git branch -a
 
-git add .
-
-git commit -m "Feature Added"
-
-git checkout master
-
-# Edit the SAME line in index.html
-
-git add .
-
-git commit -m "Master Updated"
-
-git merge feature
-
-# Resolve conflict in index.html
-
-git add index.html
-
-git commit -m "Resolved Merge Conflict"
-
-git checkout feature
-
+# Step 7: Rebase
 git rebase master
 
+# Step 8: Create a feature branch
+git checkout -b feature
+
+# Step 9: Edit index.html manually and save the file
+
+# Step 10: Stage and commit changes
+git add .
+git commit -m "Feature Added"
+
+# Step 11: Switch back to master
+git checkout master
+
+# Step 12: Edit the same line in index.html manually and save
+
+# Step 13: Stage and commit
+git add .
+git commit -m "Master Updated"
+
+# Step 14: Merge feature into master
+git merge feature
+
+# If a merge conflict occurs:
+# Open index.html, resolve the conflict, save the file
+
+# Step 15: Stage resolved file
+git add index.html
+
+# Step 16: Commit the resolved conflict
+git commit -m "Resolved Merge Conflict"
+
+# Step 17: Switch to feature branch
+git checkout feature
+
+# Step 18: Rebase feature onto master
+git rebase master
+
+# Step 19: Verify commit history
 git log --oneline --graph --all
