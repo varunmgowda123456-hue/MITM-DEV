@@ -6,3 +6,42 @@ git branch ls
 git branch
 git branch -a
 git rebase master
+
+
+git clone https://github.com/LikithKumar0112/Mod1P1-Demo.git
+
+cd Mod1P1-Demo
+
+git branch
+
+git branch -m main master
+
+git checkout -b feature
+
+# Edit index.html
+
+git add .
+
+git commit -m "Feature Added"
+
+git checkout master
+
+# Edit the SAME line in index.html
+
+git add .
+
+git commit -m "Master Updated"
+
+git merge feature
+
+# Resolve conflict in index.html
+
+git add index.html
+
+git commit -m "Resolved Merge Conflict"
+
+git checkout feature
+
+git rebase master
+
+git log --oneline --graph --all
